@@ -7,7 +7,7 @@
 //
 
 #import "SZAppDelegate.h"
-#import "SZViewController.h"
+#import "SZModalWebViewController.h"
 
 @implementation SZAppDelegate
 
@@ -15,8 +15,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-	SZViewController *rootViewController = [[SZViewController alloc] init];
-	self.window.rootViewController = rootViewController;
+	NSURL *URL = [NSURL URLWithString:@"http://www.google.com"];
+	SZModalWebViewController *webViewController = [[SZModalWebViewController alloc] initWithURL:URL];
+	self.window.rootViewController = webViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

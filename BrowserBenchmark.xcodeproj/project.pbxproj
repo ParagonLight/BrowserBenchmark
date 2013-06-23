@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		6D6BCCB117747E610086C77B /* SZModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6BCCAE17747E610086C77B /* SZModalWebViewController.m */; };
 		6D6BCCB217747E610086C77B /* SZWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6BCCB017747E610086C77B /* SZWebViewController.m */; };
-		6D6BCCB617747EF10086C77B /* SZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6BCCB417747EF10086C77B /* SZViewController.m */; };
-		6D6BCCB717747EF10086C77B /* SZViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6BCCB517747EF10086C77B /* SZViewController.xib */; };
 		6DCF3E0817747C52000A2C4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCF3E0717747C52000A2C4A /* UIKit.framework */; };
 		6DCF3E0A17747C52000A2C4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCF3E0917747C52000A2C4A /* Foundation.framework */; };
 		6DCF3E0C17747C52000A2C4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCF3E0B17747C52000A2C4A /* CoreGraphics.framework */; };
@@ -28,9 +26,6 @@
 		6D6BCCAE17747E610086C77B /* SZModalWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZModalWebViewController.m; sourceTree = "<group>"; };
 		6D6BCCAF17747E610086C77B /* SZWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZWebViewController.h; sourceTree = "<group>"; };
 		6D6BCCB017747E610086C77B /* SZWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZWebViewController.m; sourceTree = "<group>"; };
-		6D6BCCB317747EF10086C77B /* SZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZViewController.h; sourceTree = "<group>"; };
-		6D6BCCB417747EF10086C77B /* SZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZViewController.m; sourceTree = "<group>"; };
-		6D6BCCB517747EF10086C77B /* SZViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZViewController.xib; sourceTree = "<group>"; };
 		6DCF3E0417747C52000A2C4A /* BrowserBenchmark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowserBenchmark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCF3E0717747C52000A2C4A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DCF3E0917747C52000A2C4A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,9 +91,6 @@
 				6DCF3E1617747C52000A2C4A /* SZAppDelegate.h */,
 				6DCF3E1717747C52000A2C4A /* SZAppDelegate.m */,
 				6DCF3E0E17747C52000A2C4A /* Supporting Files */,
-				6D6BCCB317747EF10086C77B /* SZViewController.h */,
-				6D6BCCB417747EF10086C77B /* SZViewController.m */,
-				6D6BCCB517747EF10086C77B /* SZViewController.xib */,
 			);
 			path = BrowserBenchmark;
 			sourceTree = "<group>";
@@ -185,7 +177,6 @@
 				6DCF3E1C17747C52000A2C4A /* Default@2x.png in Resources */,
 				6DCF3E1E17747C52000A2C4A /* Default-568h@2x.png in Resources */,
 				6DCF3E2517747CCF000A2C4A /* SZWebViewController.bundle in Resources */,
-				6D6BCCB717747EF10086C77B /* SZViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +191,6 @@
 				6DCF3E1817747C52000A2C4A /* SZAppDelegate.m in Sources */,
 				6D6BCCB117747E610086C77B /* SZModalWebViewController.m in Sources */,
 				6D6BCCB217747E610086C77B /* SZWebViewController.m in Sources */,
-				6D6BCCB617747EF10086C77B /* SZViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

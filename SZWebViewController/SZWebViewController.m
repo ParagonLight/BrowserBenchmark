@@ -17,6 +17,9 @@
 @property (nonatomic, strong) UIWebView *mainWebView;
 @property (nonatomic, strong) NSURL *URL;
 
+@property (nonatomic, strong) UIView *maskView;
+@property (nonatomic, strong) UITextField *urlTextField;
+
 - (id)initWithAddress:(NSString*)urlString;
 - (id)initWithURL:(NSURL*)URL;
 - (void)loadURL:(NSURL*)URL;
@@ -76,6 +79,47 @@
     return stopBarButtonItem;
 }
 
+- (void)setURL:(NSURL *)aURL
+{
+	URL = aURL;
+	self.urlTextField.text = URL.absoluteString;
+}
+
+- (NSURL *)URL
+{
+	NSString *text = self.urlTextField.text;
+	NSString *autocompletedText = [text hasPrefix:@"http://"]?text:[NSString stringWithFormat:@"http://%@", text];
+	self.URL = [NSURL URLWithString:autocompletedText];
+	return URL;
+}
+
+- (UITextField *)urlTextField
+{
+	if (!_urlTextField) {
+		_urlTextField = [[UITextField alloc] initWithFrame:CGRectMake(5, 10, 310, 24)];
+		_urlTextField.placeholder = @"Enter web address here...";
+		_urlTextField.clearsOnBeginEditing = YES;
+		_urlTextField.keyboardType = UIKeyboardTypeURL;
+		_urlTextField.returnKeyType = UIReturnKeyGo;
+		[_urlTextField addTarget:self action:@selector(urlInputed) forControlEvents:UIControlEventEditingDidEndOnExit];
+	}
+	return _urlTextField;
+}
+
+- (void)urlInputed
+{
+	[self loadURL:self.URL];
+}
+
+- (UIView *)maskView
+{
+	if (!_maskView) {
+		_maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, 320, 44)];
+	}
+	return _maskView;
+}
+
+
 #pragma mark - Initialization
 
 - (id)initWithAddress:(NSString *)urlString {
@@ -107,6 +151,11 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	self.maskView.backgroundColor = [UIColor whiteColor];
+	[self.navigationController.view addSubview:self.maskView];
+	self.urlTextField.backgroundColor = [UIColor whiteColor];
+	self.urlTextField.textAlignment = NSTextAlignmentCenter;
+	[_maskView addSubview:self.urlTextField];
     [self updateToolbarItems];
 }
 
@@ -190,6 +239,7 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+	NSLog(@"%@", [webView stringByEvaluatingJavaScriptFromString:@"window.location"]);
     [self updateToolbarItems];
 }
 
@@ -197,13 +247,19 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
-    self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    //self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     [self updateToolbarItems];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [self updateToolbarItems];
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+	self.URL = request.URL;
+	return YES;
 }
 
 #pragma mark - Target actions

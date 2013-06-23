@@ -30,7 +30,7 @@
 - (id)initWithURL:(NSURL *)URL {
     self.webViewController = [[SZWebViewController alloc] initWithURL:URL];
     if (self = [super initWithRootViewController:self.webViewController]) {
-        self.webViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:webViewController action:@selector(doneButtonClicked:)];
+        //self.webViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:webViewController action:@selector(doneButtonClicked:)];
     }
     return self;
 }
