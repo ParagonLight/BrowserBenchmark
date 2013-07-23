@@ -14,11 +14,15 @@
 @property (nonatomic, strong, readonly) UIBarButtonItem *forwardBarButtonItem;
 @property (nonatomic, strong, readonly) UIBarButtonItem *refreshBarButtonItem;
 @property (nonatomic, strong, readonly) UIBarButtonItem *stopBarButtonItem;
+@property (nonatomic, strong, readonly) UIBarButtonItem *autoScrollButtonItem;
 @property (nonatomic, strong) UIWebView *mainWebView;
 @property (nonatomic, strong) NSURL *URL;
+@property (nonatomic, strong) NSTimer *myTimer;
 
 @property (nonatomic, strong) UIView *maskView;
 @property (nonatomic, strong) UITextField *urlTextField;
+
+@property (nonatomic, strong) NSMutableDictionary *plistDict;
 
 - (id)initWithAddress:(NSString*)urlString;
 - (id)initWithURL:(NSURL*)URL;
@@ -30,6 +34,7 @@
 - (void)goForwardClicked:(UIBarButtonItem *)sender;
 - (void)reloadClicked:(UIBarButtonItem *)sender;
 - (void)stopClicked:(UIBarButtonItem *)sender;
+- (void)autoScrollClicked:(UIBarButtonItem *)sender;
 
 @end
 
@@ -38,9 +43,20 @@
 
 
 @synthesize URL, mainWebView;
-@synthesize backBarButtonItem, forwardBarButtonItem, refreshBarButtonItem, stopBarButtonItem;
+@synthesize backBarButtonItem, forwardBarButtonItem, refreshBarButtonItem, stopBarButtonItem, autoScrollButtonItem;
+@synthesize myTimer;
+@synthesize plistDict;
 
 #pragma mark - setters and getters
+
+- (UIBarButtonItem *)autoScrollButtonItem {
+    if (!autoScrollButtonItem){
+        autoScrollButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"setting.png"] style:UIBarButtonItemStylePlain target:self action:@selector(autoScrollClicked:)];
+        autoScrollButtonItem.imageInsets = UIEdgeInsetsMake(2.0f, 0.0f, -2.0f, 0.0f);
+		autoScrollButtonItem.width = 18.0f;
+    }
+    return autoScrollButtonItem;
+}
 
 - (UIBarButtonItem *)backBarButtonItem {
     
@@ -151,6 +167,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    [self readPListFile];
 	self.maskView.backgroundColor = [UIColor whiteColor];
 	[self.navigationController.view addSubview:self.maskView];
 	self.urlTextField.backgroundColor = [UIColor whiteColor];
@@ -209,7 +226,7 @@
 - (void)updateToolbarItems {
     self.backBarButtonItem.enabled = self.mainWebView.canGoBack;
     self.forwardBarButtonItem.enabled = self.mainWebView.canGoForward;
-    
+    self.autoScrollButtonItem.enabled = YES;
     UIBarButtonItem *refreshStopBarButtonItem = self.mainWebView.isLoading ? self.stopBarButtonItem : self.refreshBarButtonItem;
     
     UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
@@ -224,6 +241,8 @@
 			 flexibleSpace,
 			 self.forwardBarButtonItem,
 			 flexibleSpace,
+             self.autoScrollButtonItem,
+             flexibleSpace,
 			 refreshStopBarButtonItem,
 			 flexibleSpace,
 			 nil];
@@ -281,6 +300,55 @@
 	[self updateToolbarItems];
 }
 
+- (void)autoScrollClicked:(UIBarButtonItem *)sender {
+    //scroll down
+    interval1 = [[[plistDict valueForKey:@"first"] valueForKey:@"interval"] doubleValue];
+    offset1 = [[[plistDict valueForKey:@"first"] valueForKey:@"offset"] integerValue];
+    speed1 = [[[plistDict valueForKey:@"first"] valueForKey:@"speed"] doubleValue];
+    times1 = [[[plistDict valueForKey:@"first"] valueForKey:@"times"] integerValue];
+    //scroll up
+    interval2 = [[[plistDict valueForKey:@"second"] valueForKey:@"interval"] doubleValue];
+    offset2 = [[[plistDict valueForKey:@"second"] valueForKey:@"offset"] integerValue];
+    speed2 = [[[plistDict valueForKey:@"second"] valueForKey:@"speed"] doubleValue];
+    times2 = [[[plistDict valueForKey:@"second"] valueForKey:@"times"] integerValue];
+    
+    //idle
+    idleInterval = [[[plistDict valueForKey:@"idle"] valueForKey:@"interval"] doubleValue];
+    idleTimes = [[[plistDict valueForKey:@"idle"] valueForKey:@"times"] doubleValue];
+    currentOffset = 0;
+    times = 0;
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:interval1 target:self selector:@selector(autoScroll) userInfo:nil repeats:YES];
+}
+
+- (void)autoScroll {
+    if(times < times1){
+        currentOffset += offset1 / 2;
+        if ([mainWebView subviews]) {
+            UIScrollView* scrollView = [[mainWebView subviews] objectAtIndex:0];
+            [UIView animateWithDuration:speed1 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+                [scrollView setContentOffset:CGPointMake(0, currentOffset) animated:YES];
+                times ++;
+            } completion:nil];
+        }
+    }else if(times >= (times1) && times < (idleTimes + times1)){
+        //do nothing
+        times ++;
+    }else if(times >= (idleTimes +times1) && times < (idleTimes + times2 + times1)){
+        currentOffset += offset2 / 2;
+        if ([mainWebView subviews]) {
+            UIScrollView* scrollView = [[mainWebView subviews] objectAtIndex:0];
+            [UIView animateWithDuration:speed2 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+                [scrollView setContentOffset:CGPointMake(0, currentOffset) animated:YES];
+                times ++;
+            } completion:nil];
+        }
+    }else{
+        [myTimer invalidate];
+        myTimer = nil;
+    }
+}
+
+
 - (void)doneButtonClicked:(id)sender {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 60000
     [self dismissModalViewControllerAnimated:YES];
@@ -288,5 +356,14 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 #endif
 }
+
+#pragma mark - Read pList
+
+- (void) readPListFile {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"schedule" ofType:@"plist"];
+    plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    
+}
+
 
 @end

@@ -19,6 +19,8 @@
 		6DCF3E1C17747C52000A2C4A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCF3E1B17747C52000A2C4A /* Default@2x.png */; };
 		6DCF3E1E17747C52000A2C4A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCF3E1D17747C52000A2C4A /* Default-568h@2x.png */; };
 		6DCF3E2517747CCF000A2C4A /* SZWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6DCF3E2417747CCF000A2C4A /* SZWebViewController.bundle */; };
+		744E3176179ED929000DE16B /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 744E3175179ED929000DE16B /* setting.png */; };
+		74BFDDE7179E68D7009627AD /* schedule.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74BFDDE6179E68D7009627AD /* schedule.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		6DCF3E1B17747C52000A2C4A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6DCF3E1D17747C52000A2C4A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6DCF3E2417747CCF000A2C4A /* SZWebViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SZWebViewController.bundle; path = Resources/SZWebViewController.bundle; sourceTree = SOURCE_ROOT; };
+		744E3175179ED929000DE16B /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		74BFDDE6179E68D7009627AD /* schedule.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = schedule.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 		6DCF3E0E17747C52000A2C4A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				744E3175179ED929000DE16B /* setting.png */,
 				6DCF3E0F17747C52000A2C4A /* BrowserBenchmark-Info.plist */,
 				6DCF3E1017747C52000A2C4A /* InfoPlist.strings */,
 				6DCF3E1317747C52000A2C4A /* main.m */,
@@ -105,6 +110,7 @@
 				6DCF3E1917747C52000A2C4A /* Default.png */,
 				6DCF3E1B17747C52000A2C4A /* Default@2x.png */,
 				6DCF3E1D17747C52000A2C4A /* Default-568h@2x.png */,
+				74BFDDE6179E68D7009627AD /* schedule.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -177,6 +183,8 @@
 				6DCF3E1C17747C52000A2C4A /* Default@2x.png in Resources */,
 				6DCF3E1E17747C52000A2C4A /* Default-568h@2x.png in Resources */,
 				6DCF3E2517747CCF000A2C4A /* SZWebViewController.bundle in Resources */,
+				74BFDDE7179E68D7009627AD /* schedule.plist in Resources */,
+				744E3176179ED929000DE16B /* setting.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>idle</key>
+	<dict>
+		<key>interval</key>
+		<integer>1</integer>
+		<key>times</key>
+		<string>2</string>
+	</dict>
+	<key>first</key>
+	<dict>
+		<key>interval</key>
+		<integer>1</integer>
+		<key>times</key>
+		<integer>3</integer>
+		<key>offset</key>
+		<integer>910</integer>
+		<key>speed</key>
+		<real>0.6</real>
+	</dict>
+	<key>second</key>
+	<dict>
+		<key>interval</key>
+		<integer>1</integer>
+		<key>times</key>
+		<string>3</string>
+		<key>offset</key>
+		<string>-910</string>
+		<key>speed</key>
+		<string>0.6</string>
+	</dict>
+</dict>
+</plist>
