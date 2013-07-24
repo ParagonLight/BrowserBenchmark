@@ -51,7 +51,14 @@
 
 - (UIBarButtonItem *)autoScrollButtonItem {
     if (!autoScrollButtonItem){
-        autoScrollButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"setting.png"] style:UIBarButtonItemStylePlain target:self action:@selector(autoScrollClicked:)];
+        UIImage *originalImage = [UIImage imageNamed:@"setting.png"];
+        // scaling set to 2.0 makes the image 1/1.5 the size.
+//        UIImage *scaledImage =
+//        [UIImage imageWithCGImage:[originalImage CGImage]
+//                            scale:(originalImage.scale * 1.5)
+//                      orientation:(originalImage.imageOrientation)];
+        autoScrollButtonItem = [[UIBarButtonItem alloc] initWithImage:originalImage style:UIBarButtonItemStylePlain target:self action:@selector(autoScrollClicked:)];
+//        autoScrollButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItem target:self action:@selector(autoScrollClicked:)];
         autoScrollButtonItem.imageInsets = UIEdgeInsetsMake(2.0f, 0.0f, -2.0f, 0.0f);
 		autoScrollButtonItem.width = 18.0f;
     }
