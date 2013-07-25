@@ -7,27 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D6BCCB117747E610086C77B /* SZModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6BCCAE17747E610086C77B /* SZModalWebViewController.m */; };
-		6D6BCCB217747E610086C77B /* SZWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6BCCB017747E610086C77B /* SZWebViewController.m */; };
 		6DCF3E0817747C52000A2C4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCF3E0717747C52000A2C4A /* UIKit.framework */; };
 		6DCF3E0A17747C52000A2C4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCF3E0917747C52000A2C4A /* Foundation.framework */; };
 		6DCF3E0C17747C52000A2C4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCF3E0B17747C52000A2C4A /* CoreGraphics.framework */; };
 		6DCF3E1217747C52000A2C4A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DCF3E1017747C52000A2C4A /* InfoPlist.strings */; };
 		6DCF3E1417747C52000A2C4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCF3E1317747C52000A2C4A /* main.m */; };
-		6DCF3E1817747C52000A2C4A /* SZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCF3E1717747C52000A2C4A /* SZAppDelegate.m */; };
+		6DCF3E1817747C52000A2C4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCF3E1717747C52000A2C4A /* AppDelegate.m */; };
 		6DCF3E1A17747C52000A2C4A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCF3E1917747C52000A2C4A /* Default.png */; };
 		6DCF3E1C17747C52000A2C4A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCF3E1B17747C52000A2C4A /* Default@2x.png */; };
 		6DCF3E1E17747C52000A2C4A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCF3E1D17747C52000A2C4A /* Default-568h@2x.png */; };
-		6DCF3E2517747CCF000A2C4A /* SZWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6DCF3E2417747CCF000A2C4A /* SZWebViewController.bundle */; };
+		6DCF3E2517747CCF000A2C4A /* WebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6DCF3E2417747CCF000A2C4A /* WebViewController.bundle */; };
+		743997CC17A0DF71007D5DA6 /* ModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 743997C917A0DF71007D5DA6 /* ModalWebViewController.m */; };
+		743997CD17A0DF71007D5DA6 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 743997CB17A0DF71007D5DA6 /* WebViewController.m */; };
 		744E3176179ED929000DE16B /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 744E3175179ED929000DE16B /* setting.png */; };
 		74BFDDE7179E68D7009627AD /* schedule.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74BFDDE6179E68D7009627AD /* schedule.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6D6BCCAD17747E610086C77B /* SZModalWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZModalWebViewController.h; sourceTree = "<group>"; };
-		6D6BCCAE17747E610086C77B /* SZModalWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZModalWebViewController.m; sourceTree = "<group>"; };
-		6D6BCCAF17747E610086C77B /* SZWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZWebViewController.h; sourceTree = "<group>"; };
-		6D6BCCB017747E610086C77B /* SZWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZWebViewController.m; sourceTree = "<group>"; };
 		6DCF3E0417747C52000A2C4A /* BrowserBenchmark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowserBenchmark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCF3E0717747C52000A2C4A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DCF3E0917747C52000A2C4A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -36,12 +32,16 @@
 		6DCF3E1117747C52000A2C4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6DCF3E1317747C52000A2C4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6DCF3E1517747C52000A2C4A /* BrowserBenchmark-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrowserBenchmark-Prefix.pch"; sourceTree = "<group>"; };
-		6DCF3E1617747C52000A2C4A /* SZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZAppDelegate.h; sourceTree = "<group>"; };
-		6DCF3E1717747C52000A2C4A /* SZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZAppDelegate.m; sourceTree = "<group>"; };
+		6DCF3E1617747C52000A2C4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6DCF3E1717747C52000A2C4A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6DCF3E1917747C52000A2C4A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6DCF3E1B17747C52000A2C4A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6DCF3E1D17747C52000A2C4A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		6DCF3E2417747CCF000A2C4A /* SZWebViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SZWebViewController.bundle; path = Resources/SZWebViewController.bundle; sourceTree = SOURCE_ROOT; };
+		6DCF3E2417747CCF000A2C4A /* WebViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = WebViewController.bundle; path = Resources/WebViewController.bundle; sourceTree = SOURCE_ROOT; };
+		743997C817A0DF71007D5DA6 /* ModalWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalWebViewController.h; path = WebViewController/ModalWebViewController.h; sourceTree = SOURCE_ROOT; };
+		743997C917A0DF71007D5DA6 /* ModalWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalWebViewController.m; path = WebViewController/ModalWebViewController.m; sourceTree = SOURCE_ROOT; };
+		743997CA17A0DF71007D5DA6 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = WebViewController/WebViewController.h; sourceTree = SOURCE_ROOT; };
+		743997CB17A0DF71007D5DA6 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = WebViewController/WebViewController.m; sourceTree = SOURCE_ROOT; };
 		744E3175179ED929000DE16B /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		74BFDDE6179E68D7009627AD /* schedule.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = schedule.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,10 +90,10 @@
 		6DCF3E0D17747C52000A2C4A /* BrowserBenchmark */ = {
 			isa = PBXGroup;
 			children = (
-				6DCF3E2617747CEB000A2C4A /* SZWebViewController */,
-				6DCF3E2417747CCF000A2C4A /* SZWebViewController.bundle */,
-				6DCF3E1617747C52000A2C4A /* SZAppDelegate.h */,
-				6DCF3E1717747C52000A2C4A /* SZAppDelegate.m */,
+				6DCF3E2617747CEB000A2C4A /* WebViewController */,
+				6DCF3E2417747CCF000A2C4A /* WebViewController.bundle */,
+				6DCF3E1617747C52000A2C4A /* AppDelegate.h */,
+				6DCF3E1717747C52000A2C4A /* AppDelegate.m */,
 				6DCF3E0E17747C52000A2C4A /* Supporting Files */,
 			);
 			path = BrowserBenchmark;
@@ -115,14 +115,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6DCF3E2617747CEB000A2C4A /* SZWebViewController */ = {
+		6DCF3E2617747CEB000A2C4A /* WebViewController */ = {
 			isa = PBXGroup;
 			children = (
-				6D6BCCAD17747E610086C77B /* SZModalWebViewController.h */,
-				6D6BCCAE17747E610086C77B /* SZModalWebViewController.m */,
-				6D6BCCAF17747E610086C77B /* SZWebViewController.h */,
-				6D6BCCB017747E610086C77B /* SZWebViewController.m */,
+				743997C817A0DF71007D5DA6 /* ModalWebViewController.h */,
+				743997C917A0DF71007D5DA6 /* ModalWebViewController.m */,
+				743997CA17A0DF71007D5DA6 /* WebViewController.h */,
+				743997CB17A0DF71007D5DA6 /* WebViewController.m */,
 			);
+			name = WebViewController;
 			path = SZWebViewController;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -182,7 +183,7 @@
 				6DCF3E1A17747C52000A2C4A /* Default.png in Resources */,
 				6DCF3E1C17747C52000A2C4A /* Default@2x.png in Resources */,
 				6DCF3E1E17747C52000A2C4A /* Default-568h@2x.png in Resources */,
-				6DCF3E2517747CCF000A2C4A /* SZWebViewController.bundle in Resources */,
+				6DCF3E2517747CCF000A2C4A /* WebViewController.bundle in Resources */,
 				74BFDDE7179E68D7009627AD /* schedule.plist in Resources */,
 				744E3176179ED929000DE16B /* setting.png in Resources */,
 			);
@@ -196,9 +197,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DCF3E1417747C52000A2C4A /* main.m in Sources */,
-				6DCF3E1817747C52000A2C4A /* SZAppDelegate.m in Sources */,
-				6D6BCCB117747E610086C77B /* SZModalWebViewController.m in Sources */,
-				6D6BCCB217747E610086C77B /* SZWebViewController.m in Sources */,
+				6DCF3E1817747C52000A2C4A /* AppDelegate.m in Sources */,
+				743997CC17A0DF71007D5DA6 /* ModalWebViewController.m in Sources */,
+				743997CD17A0DF71007D5DA6 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

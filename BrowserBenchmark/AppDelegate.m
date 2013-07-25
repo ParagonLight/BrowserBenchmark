@@ -1,22 +1,22 @@
 //
-//  SZAppDelegate.m
+//  AppDelegate.m
 //  BrowserBenchmark
 //
-//  Created by Zongxuan Su on 13-6-21.
-//  Copyright (c) 2013年 Zongxuan Su. All rights reserved.
+//  Created by FNSK on 13-6-21.
+//  Copyright (c) 2013年 FNSK. All rights reserved.
 //
 
-#import "SZAppDelegate.h"
-#import "SZModalWebViewController.h"
+#import "AppDelegate.h"
+#import "ModalWebViewController.h"
 
-@implementation SZAppDelegate
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 	NSURL *URL = [NSURL URLWithString:@"http://www.google.com"];
-	SZModalWebViewController *webViewController = [[SZModalWebViewController alloc] initWithURL:URL];
+	ModalWebViewController *webViewController = [[ModalWebViewController alloc] initWithURL:URL];
 	self.window.rootViewController = webViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
